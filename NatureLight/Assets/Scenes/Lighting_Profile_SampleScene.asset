@@ -46,8 +46,8 @@ MonoBehaviour:
   mobileOptimizedBloom: 0
   bRotation: -0.085
   aoType: 0
-  aoRadius: 0.3
-  aoIntensity: 0.424
+  aoRadius: 0.46
+  aoIntensity: 1.36
   ambientOnly: 0
   aoColor: {r: 0, g: 0, b: 0, a: 1}
   aoQuality: 4
@@ -69,7 +69,7 @@ MonoBehaviour:
   afLayer:
     serializedVersion: 2
     m_Bits: 1
-  exposureIntensity: 0.91
+  exposureIntensity: 1
   contrastValue: 0.1
   temp: 4.5
   colorMode: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   DOF_Enabled: 0
   Bloom_Enabled: 1
   AA_Enabled: 1
-  AO_Enabled: 1
+  AO_Enabled: 0
   MotionBlur_Enabled: 1
   Vignette_Enabled: 1
   Chromattic_Enabled: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   chromatticState: 1
   ssrState: 0
   st_ssrState: 0
-  foliageState: 0
+  foliageState: 1
   snowState: 0
   OptionsState: 1
-  LightingBoxState: 0
+  LightingBoxState: 1
