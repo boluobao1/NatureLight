@@ -31,13 +31,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
   m_Name: AutoExposure
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 54.84525, y: 99}
+    value: {x: 52.222923, y: 99}
   minLuminance:
     overrideState: 1
     value: -6.3
@@ -253,10 +253,10 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0, y: 0, z: 0, w: 0}
+    value: {x: 1, y: 1, z: 1, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 0, y: 0, z: 0, w: -0.11}
+    value: {x: 1, y: 1, z: 1, w: -0.11}
   gain:
     overrideState: 1
     value: {x: 1, y: 1, z: 1, w: 0}
