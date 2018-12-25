@@ -26,6 +26,7 @@ public class CappedSectionBox : MonoBehaviour {
 	private Vector3 lookCamera, startDrag, startPos, startDragRot, lookHitPoint, startScale;
 	private bool dragging;
 
+    public GameObject CreateObject;
 
 	// Use this for initialization
 	void Start () {
@@ -101,42 +102,42 @@ public class CappedSectionBox : MonoBehaviour {
                      case GizmoAxis.X:
                         {
                             projectedTranslation = Vector3.Project(translation, transform.right);
-                            transform.position = startPos + 0.5f*(projectedTranslation.normalized * translation.magnitude);
+                            CreateObject.transform.position = startPos + 0.5f*(projectedTranslation.normalized * translation.magnitude);
                             lsx += translation.magnitude * Mathf.Sign(Vector3.Dot(projectedTranslation, transform.right));
                             break;
                         }
                      case GizmoAxis.Xneg:
                         {
                             projectedTranslation = Vector3.Project(translation, -transform.right);
-                            transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
+                            CreateObject.transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
                             lsx += translation.magnitude * Mathf.Sign(Vector3.Dot(projectedTranslation, -transform.right));
                             break;
                         }
                     case GizmoAxis.Y:
                         {
                             projectedTranslation = Vector3.Project(translation, transform.up);
-                            transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
+                            CreateObject.transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
                             lsy += translation.magnitude * Mathf.Sign(Vector3.Dot(projectedTranslation, transform.up));
                             break;
                         }
                     case GizmoAxis.Yneg:
                         {
                             projectedTranslation = Vector3.Project(translation, -transform.up);
-                            transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
+                            CreateObject.transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
                             lsy += translation.magnitude * Mathf.Sign(Vector3.Dot(projectedTranslation, -transform.up));
                             break;
                         }
                     case GizmoAxis.Z:
                         {
                             projectedTranslation = Vector3.Project(translation, transform.forward);
-                            transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
+                            CreateObject.transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
                             lsz += translation.magnitude * Mathf.Sign(Vector3.Dot(projectedTranslation, transform.forward));
                             break;
                         }
                     case GizmoAxis.Zneg:
                         {
                             projectedTranslation = Vector3.Project(translation, -transform.forward);
-                            transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
+                            CreateObject.transform.position = startPos + 0.5f * (projectedTranslation.normalized * translation.magnitude);
                             lsz += translation.magnitude * Mathf.Sign(Vector3.Dot(projectedTranslation, -transform.forward));
                             break;
                         }
@@ -175,6 +176,6 @@ public class CappedSectionBox : MonoBehaviour {
 
         transform.localScale = scale * b.size + clearance;
 
-        transform.position = b.center;
+        CreateObject.transform.position = b.center;
     }
 }

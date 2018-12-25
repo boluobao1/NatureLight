@@ -33,7 +33,7 @@ namespace CreateAndOperate
 
         void Start()
         {
-            if (FatherObject == null)
+            if (FatherObject == null && OriginPrefab != null)
             {
                 FatherObject = new GameObject(OriginPrefab.name + "_Farther");
             }
@@ -64,7 +64,7 @@ namespace CreateAndOperate
                     else
                     {
                         GameObjectAdd.transform.position = Hit.point;
-                        GameObjectAdd.transform.forward = Hit.normal;
+                        GameObjectAdd.transform.forward = -Hit.normal;
                     }
                 }
                 else//追踪失败，销毁缓存的物体
