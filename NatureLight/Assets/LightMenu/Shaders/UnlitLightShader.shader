@@ -14,6 +14,8 @@
 
 		_PositionX("PositionX", float) = 0
 
+		_IfFloor("IfFloor",int) = 0
+
 	}
 	SubShader
 	{
@@ -55,6 +57,7 @@
 			float _WindowHeight;
 			float Position;
 			float _PositionX;
+			int _IfFloor;
 
 			float GetIllumination(float3 PointPosition, float3 WindowPosition, float WindowWidth, float WindowHeight)
 			{
@@ -100,7 +103,19 @@
 				Position = i.vertex;
 
 				fixed Factor = GetIllumination(i.worldPos, _WindowPosition, _WindowWidth, _WindowHeight);
-				fixed4 ColorPoint = _Color * Factor*10;
+
+				fixed4 ColorPoint;
+	
+				if (_IfFloor == 0)
+				{
+					ColorPoint = _Color * Factor * 10;
+				}
+				else
+				{
+					ColorPoint = floor(_Color * Factor * 100) / 10.0;
+				}
+
+
 				return ColorPoint;
 			}
 
