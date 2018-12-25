@@ -9,7 +9,7 @@ namespace CreateAndOperate
     {
 
         //区分不同的状态
-        public enum State { Preview, Normal, Translation, Rotation, Scaling };
+        public enum State { Preview, Normal, Choiced, Translation, Rotation, Scaling };
 
         //物体的类型
         public enum Type { Light, Window };
@@ -37,7 +37,10 @@ namespace CreateAndOperate
         public abstract State SwitchState(State NewState);
 
         //当物体被选中时
-        //public abstract void OnMouseDown();
+        public abstract void OnClick();
+
+        //删除物体
+        public abstract void Delete();
 
   
     }
